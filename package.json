@@ -1,23 +1,11 @@
 {
   "name": "angular-nlp-compromise",
-  "version": "1.1.0",
-  "description": "Angular js module for nlp_compromise library https://github.com/spencermountain/nlp_compromise",
-  "keywords": ["nlp", "nltk", "natural", "language", "processing", "angular", "nlp_compromise"],
-  "main": "./dist/angular-nlp-compromise.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Kroid/angular-nlp-compromise.git"
-  },
-  "author": "George M Kroid <kroid@yandex.ru>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Kroid/angular-nlp-compromise/issues"
-  },
-  "homepage": "https://github.com/Kroid/angular-nlp-compromise",
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-include": "^1.1.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.1.0"
-  }
+  "main": "compromise.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bryannovoed/bower-nlp-compromise",
+  "authors": [
+    "Rachel Lopatin <rachel@novoed.com>"
+  ],
+  "description": "Bower compromise library https://github.com/nlp-compromise/compromise",
+  "license": "MIT"
 }
