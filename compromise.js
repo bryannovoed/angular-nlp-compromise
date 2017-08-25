@@ -1,4 +1,4 @@
-/* nlp_compromise v6.5.3 MIT*/
+/* nlp_compromise v6.5.1 MIT*/
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.nlp_compromise = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 //these are common word shortenings used in the lexicon and sentence segmentation methods
 //there are all nouns, or at the least, belong beside one.
@@ -1916,7 +1916,7 @@ exports.expand_prefixes = function (list, obj) {
 },{}],24:[function(_dereq_,module,exports){
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var fns = _dereq_('./fns.js');
 
@@ -2013,7 +2013,6 @@ function NLP() {
 var nlp = new NLP();
 //export to window or webworker
 if ((typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' || typeof DedicatedWorkerGlobalScope === 'function') {
-  var self = typeof self === 'undefined' ? undefined : self; // eslint-disable-line no-use-before-define
   self.nlp_compromise = nlp;
 }
 //export to commonjs
@@ -4363,7 +4362,7 @@ var Question = function (_Sentence) {
   function Question(str, options) {
     _classCallCheck(this, Question);
 
-    return _possibleConstructorReturn(this, (Question.__proto__ || Object.getPrototypeOf(Question)).call(this, str, options));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Question).call(this, str, options));
   }
 
   _createClass(Question, [{
@@ -5017,7 +5016,7 @@ var Statement = function (_Sentence) {
   function Statement(str, options) {
     _classCallCheck(this, Statement);
 
-    return _possibleConstructorReturn(this, (Statement.__proto__ || Object.getPrototypeOf(Statement)).call(this, str, options));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Statement).call(this, str, options));
   }
 
   _createClass(Statement, [{
@@ -5062,7 +5061,7 @@ var Adjective = function (_Term) {
   function Adjective(str, tag) {
     _classCallCheck(this, Adjective);
 
-    var _this = _possibleConstructorReturn(this, (Adjective.__proto__ || Object.getPrototypeOf(Adjective)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Adjective).call(this, str));
 
     _this.tag = tag;
     if (tag) {
@@ -5519,7 +5518,7 @@ var Adverb = function (_Term) {
   function Adverb(str, tag) {
     _classCallCheck(this, Adverb);
 
-    var _this = _possibleConstructorReturn(this, (Adverb.__proto__ || Object.getPrototypeOf(Adverb)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Adverb).call(this, str));
 
     _this.tag = tag;
     _this.pos['Adverb'] = true;
@@ -5738,7 +5737,7 @@ var _Date = function (_Noun) {
   function _Date(str, tag) {
     _classCallCheck(this, _Date);
 
-    var _this = _possibleConstructorReturn(this, (_Date.__proto__ || Object.getPrototypeOf(_Date)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(_Date).call(this, str));
 
     _this.tag = tag;
     _this.pos['Date'] = true;
@@ -6073,7 +6072,7 @@ var Noun = function (_Term) {
   function Noun(str, tag) {
     _classCallCheck(this, Noun);
 
-    var _this = _possibleConstructorReturn(this, (Noun.__proto__ || Object.getPrototypeOf(Noun)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Noun).call(this, str));
 
     _this.tag = tag;
     _this.pos['Noun'] = true;
@@ -6299,7 +6298,7 @@ var Organization = function (_Noun) {
   function Organization(str, tag) {
     _classCallCheck(this, Organization);
 
-    var _this = _possibleConstructorReturn(this, (Organization.__proto__ || Object.getPrototypeOf(Organization)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Organization).call(this, str));
 
     _this.tag = tag;
     _this.pos['Organization'] = true;
@@ -6526,7 +6525,7 @@ var Person = function (_Noun) {
   function Person(str, tag) {
     _classCallCheck(this, Person);
 
-    var _this = _possibleConstructorReturn(this, (Person.__proto__ || Object.getPrototypeOf(Person)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Person).call(this, str));
 
     _this.tag = tag;
     _this.pos['Person'] = true;
@@ -7060,7 +7059,7 @@ var Place = function (_Noun) {
   function Place(str, tag) {
     _classCallCheck(this, Place);
 
-    var _this = _possibleConstructorReturn(this, (Place.__proto__ || Object.getPrototypeOf(Place)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Place).call(this, str));
 
     _this.tag = tag;
     _this.pos['Place'] = true;
@@ -7307,7 +7306,7 @@ var Url = function (_Noun) {
   function Url(str, tag) {
     _classCallCheck(this, Url);
 
-    var _this = _possibleConstructorReturn(this, (Url.__proto__ || Object.getPrototypeOf(Url)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Url).call(this, str));
 
     _this.tag = tag;
     _this.pos['Url'] = true;
@@ -7843,7 +7842,7 @@ var Value = function (_Noun) {
   function Value(str, tag) {
     _classCallCheck(this, Value);
 
-    var _this = _possibleConstructorReturn(this, (Value.__proto__ || Object.getPrototypeOf(Value)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Value).call(this, str));
 
     _this.tag = tag;
     _this.pos['Value'] = true;
@@ -8304,7 +8303,7 @@ module.exports = Term;
 //turn a verb into its other grammatical forms.
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var verb_to_actor = _dereq_('./to_actor');
 var to_infinitive = _dereq_('./to_infinitive');
@@ -8422,7 +8421,7 @@ module.exports = conjugate;
 },{"../../../data/irregular_verbs":11,"../../../fns.js":23,"./from_infinitive":103,"./generic.js":104,"./predict_form.js":105,"./strip_prefix.js":106,"./to_actor":108,"./to_infinitive":109}],103:[function(_dereq_,module,exports){
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 var rules = [{
   reg: /(eave)$/i,
@@ -9109,7 +9108,7 @@ var Verb = function (_Term) {
   function Verb(str, tag) {
     _classCallCheck(this, Verb);
 
-    var _this = _possibleConstructorReturn(this, (Verb.__proto__ || Object.getPrototypeOf(Verb)).call(this, str));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Verb).call(this, str));
 
     _this.tag = tag;
     _this.pos['Verb'] = true;
